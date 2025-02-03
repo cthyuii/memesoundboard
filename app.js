@@ -4,7 +4,8 @@ const sounds = [
     'applause', 'correct', 'wrong', 'get-out',
     'rizz', 'oioioi', 'vas', 'gay', 'again','huh',
     'naur', 'sitcom', 'wrong2', 'ding', 'sigma-boy',
-    'sad', 'freddy', 'again2',
+    'sad', 'freddy', 'again2', 'chopped-chin', 'eye-of-rah',
+    'egypt', 'indian',
 ];
 
 sounds.forEach((sound) =>{
