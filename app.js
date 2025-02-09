@@ -8,6 +8,8 @@ const sounds = [
     'egypt', 'indian',
 ];
 
+let currentSound = null;
+
 sounds.forEach((sound) =>{
     const btn = document.createElement('button');
     btn.classList.add('btn');
@@ -15,8 +17,15 @@ sounds.forEach((sound) =>{
     btn.innerText = sound;
 
     btn.addEventListener('click', ()=>{
-        stopSound();
-        document.getElementById(sound).play();
+       /* if (currentSound !== sound){
+            stopSound();
+            document.getElementById(sound).play();
+            currentSound = sound;
+        } else {
+            document.getElementById(sound).play();
+        }*/
+            stopSound();
+            document.getElementById(sound).play();
     });
 
     document.getElementById('buttons').appendChild(btn);
