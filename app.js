@@ -9,12 +9,13 @@ const sounds = [
 ];
 
 //let currentSound = null;
-let playback = 1;
+let playback = 1.0; // Default playback rate
 
 document.getElementById('setPlaybackRate').addEventListener('click', () => {
     const rate = parseFloat(document.getElementById('playbackRate').value);
     if (!isNaN(rate) && rate >= 0.5 && rate <= 3) {
         playbackRate = rate;
+        document.getElementById('playbackRateMessage').innerText = `Playback rate set to ${playbackRate}!`;
     } else {
         alert('Please enter a valid playback rate between 0.5 and 3.');
     }

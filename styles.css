@@ -75,3 +75,9 @@ body{
 .playback-rate-container button:hover {
     background-color: #0056b3;
 }
+
+.playback-rate-message {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
