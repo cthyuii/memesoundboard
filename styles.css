@@ -2,7 +2,6 @@
 
 *{
     box-sizing: border-box;
-
 }
 
 body{
@@ -15,7 +14,6 @@ body{
     height: 100vh;
     text-align: center;
     margin: 0;
-
 }
 
 .btn{
@@ -44,3 +42,36 @@ body{
     box-shadow: 0 0 10px #e8e8e8;
 }
 
+.playback-rate-container {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.playback-rate-container label {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #f05454;
+    border-radius: 5px;
+}
+
+.playback-rate-container input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.playback-rate-container button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.playback-rate-container button:hover {
+    background-color: #0056b3;
+}
