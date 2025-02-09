@@ -8,7 +8,17 @@ const sounds = [
     'egypt', 'indian',
 ];
 
-let currentSound = null;
+//let currentSound = null;
+let playback = 1;
+
+document.getElementById('setPlaybackRate').addEventListener('click', () => {
+    const rate = parseFloat(document.getElementById('playbackRate').value);
+    if (!isNaN(rate) && rate >= 0.5 && rate <= 3) {
+        playbackRate = rate;
+    } else {
+        alert('Please enter a valid playback rate between 0.5 and 3.');
+    }
+});
 
 sounds.forEach((sound) =>{
     const btn = document.createElement('button');
@@ -24,8 +34,10 @@ sounds.forEach((sound) =>{
         } else {
             document.getElementById(sound).play();
         }*/
-            stopSound();
-            document.getElementById(sound).play();
+        const audio = document.getElementById(sound);
+        audio.playbackRate = playbackRate; // Use the set playback rate
+        stopSound();
+        audio.play();
     });
 
     document.getElementById('buttons').appendChild(btn);
