@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/macc/Desktop/project/soundboard/index.html"
+            "file": "${workspaceFolder}/index.html"
         }
     ]
 }
