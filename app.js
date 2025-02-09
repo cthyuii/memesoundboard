@@ -8,8 +8,9 @@ const sounds = [
     'egypt', 'indian',
 ];
 
-//let currentSound = null;
-let playback = 1.0; // Default playback rate
+let currentAudio = null;
+let playbackRate = parseFloat(document.getElementById('playbackRate').value); // Initialize playback rate from input field
+
 
 document.getElementById('setPlaybackRate').addEventListener('click', () => {
     const rate = parseFloat(document.getElementById('playbackRate').value);
@@ -27,28 +28,28 @@ sounds.forEach((sound) =>{
 
     btn.innerText = sound;
 
-    btn.addEventListener('click', ()=>{
-       /* if (currentSound !== sound){
-            stopSound();
-            document.getElementById(sound).play();
-            currentSound = sound;
-        } else {
-            document.getElementById(sound).play();
-        }*/
-        const audio = document.getElementById(sound);
+    btn.addEventListener('click', () => {
+        if (currentAudio && currentAudio.src !== document.getElementById(sound).src) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
+
+        const audio = new Audio(document.getElementById(sound).src);
         audio.playbackRate = playbackRate; // Use the set playback rate
-        stopSound();
         audio.play();
+
+        currentAudio = audio;
     });
 
     document.getElementById('buttons').appendChild(btn);
-});
 
+});
+/*
 function stopSound(){
     sounds.forEach(sound => {
         const song = document.getElementById(sound);
         song.pause();
         song.currentTime = 0;
     });
-};
+};*/
 
